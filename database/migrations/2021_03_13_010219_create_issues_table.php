@@ -18,6 +18,8 @@ class CreateIssuesTable extends Migration
             $table->timestamps();
             $table->text('name');
             $table->text('description');
+            $table->boolean('closed');
+            $table->timestamp('closed_on')->nullable();
             $table->foreignId('project_id')->constrained();
             $table->foreignId('status_id')->constrained('issue_statuses');
         });
