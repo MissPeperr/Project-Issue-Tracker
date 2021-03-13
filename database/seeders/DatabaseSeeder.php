@@ -2,7 +2,10 @@
 
 namespace Database\Seeders;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Seeder;
+use App\Models\User;
+use App\Models\Issue;
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,6 +16,21 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        // Seeding 1st user with 2 project
+        User::factory(1)
+                ->hasProjects(2)
+                ->create();
+
+        // Seed issue statuses
+        DB::table('issue_statuses')->insert([
+            'name' => 'Unassigned'
+        ]);
+        DB::table('issue_statuses')->insert([
+            'name' => 'Backlog'
+        ]);
+
+        // Seeding 4 issues, project_id will be random
+        Issue::factory(4)
+                ->create();
     }
 }
