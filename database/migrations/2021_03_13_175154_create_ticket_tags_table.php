@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTagsTable extends Migration
+class CreateTicketTagsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CreateTagsTable extends Migration
      */
     public function up()
     {
-        Schema::create('tags', function (Blueprint $table) {
+        Schema::create('ticket_tags', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->text('name');
+            $table->foreignId('tag_id')->constrained();
+            $table->foreignId('issue_id')->constrained();
         });
     }
 
@@ -27,6 +28,6 @@ class CreateTagsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tags');
+        Schema::dropIfExists('ticket_tags');
     }
 }

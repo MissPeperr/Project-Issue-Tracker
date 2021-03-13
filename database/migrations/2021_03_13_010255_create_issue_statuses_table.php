@@ -16,6 +16,7 @@ class CreateIssueStatusesTable extends Migration
         Schema::create('issue_statuses', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->text('name');
         });
     }
 
