@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);
+@import 'project.css';
 @charset "UTF-8";
 
 /*!
@@ -22,8 +23,8 @@
   --white: #fff;
   --gray: #6c757d;
   --gray-dark: #343a40;
-  --primary: #3490dc;
-  --secondary: #6c757d;
+  --primary: #018490;
+  --secondary: #5928b3b0;
   --success: #38c172;
   --info: #6cb2eb;
   --warning: #ffed4a;
@@ -2678,14 +2679,14 @@ fieldset:disabled a.btn {
 
 .btn-primary {
   color: #fff;
-  background-color: #3490dc;
-  border-color: #3490dc;
+  background-color: var(--primary);
+  border-color: var(--primary);
 }
 
 .btn-primary:hover {
   color: #fff;
-  background-color: #227dc7;
-  border-color: #2176bd;
+  background-color: #015b63;
+  border-color: #015b63;
 }
 
 .btn-primary:focus,
@@ -2719,14 +2720,14 @@ fieldset:disabled a.btn {
 
 .btn-secondary {
   color: #fff;
-  background-color: #6c757d;
-  border-color: #6c757d;
+  background-color: var(--secondary);
+  border-color: var(--secondary);
 }
 
 .btn-secondary:hover {
   color: #fff;
-  background-color: #5a6268;
-  border-color: #545b62;
+  background-color: #2b0277b0;
+  border-color: #2b0277b0;
 }
 
 .btn-secondary:focus,

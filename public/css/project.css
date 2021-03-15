@@ -1,0 +1,17 @@
+.project_list-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.project_card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.project_card h3 {
+    margin: .5rem;
+}
+.project_card button {
+    margin: .5rem 1rem .5rem 1rem;
+}
