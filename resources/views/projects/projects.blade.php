@@ -9,7 +9,7 @@
                     <button class="btn btn-primary">Create New Project</button>
                 </div>
                 <div class="col-md-6">
-                    @if (!$has_projects)
+                    @if (count($projects) < 1)
                         <h2>You don't have any projects!</h2>
                     @else
                         @foreach ($projects as $project)

@@ -20,17 +20,9 @@ class ProjectController extends Controller
 
         $user = auth()->user();
 
-        // try {
-            $projects = Project::where('user_id', $user->id)->get();
-            return view('projects/projects', [
-                'projects' => $projects,
-                'has_projects' => true
-            ]);
-        // }
-        // catch(QueryException $e) {
-        //     return view('projects/projects', [
-        //         'has_projects' => false
-        //     ]);
-        // }
+        $projects = Project::where('user_id', $user->id)->get();
+        return view('projects/projects', [
+            'projects' => $projects
+        ]);
     }
 }
