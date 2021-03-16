@@ -12,6 +12,13 @@
 .issue_card h3 {
     margin: .5rem;
 }
+.project_card a {
+    color: white;
+}
+.project_card a:hover {
+    color: white;
+    text-decoration: none;
+}
 .issue_card button {
     margin: .5rem 2rem .5rem 2rem;
 }
