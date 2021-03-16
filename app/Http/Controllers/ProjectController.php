@@ -27,7 +27,7 @@ class ProjectController extends Controller
 
     public function show($project_id)
     {
-        $project = Project::find($project_id)->firstOrFail();
+        $project = Project::find((int)$project_id);
 
         $issues = Issue::where('project_id', $project_id)->get();
 
@@ -38,5 +38,22 @@ class ProjectController extends Controller
             'statuses' => $statuses,
             'issues' => $issues
         ]);
+    }
+
+    public function create()
+    {
+        return view('projects/create');
+    }
+
+    public function store()
+    {
+        $user = auth()->user();
+
+        $project = new Project();
+        $project->name = request('name');
+        $project->user_id = $user->id;
+        $project->save();
+
+        return redirect('/projects');
     }
 }

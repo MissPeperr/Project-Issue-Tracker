@@ -23,4 +23,8 @@ Auth::routes();
 
 Route::get('/projects', [App\Http\Controllers\ProjectController::class, 'index'])->name('projects');
 
+Route::post('/projects', [App\Http\Controllers\ProjectController::class, 'store'])->name('projects.store');
+
+Route::get('/projects/create', [App\Http\Controllers\ProjectController::class, 'create'])->name('projects.create');
+
 Route::get('/projects/{project_id}', [App\Http\Controllers\ProjectController::class, 'show'])->name('projects.show');
