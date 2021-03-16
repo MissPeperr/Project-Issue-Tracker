@@ -15,7 +15,7 @@
                         @foreach ($projects as $project)
                         <div class="project_card card">
                             <h3>{{$project->name}}</h3>
-                            <button class="btn btn-secondary">View Issues</button>
+                            <button class="btn btn-secondary"><a href="{{ route('projects.show', ['project_id' => $project->id]) }}">View Issues</a></button>
                         </div>
                         @endforeach
                     @endif

@@ -21,6 +21,6 @@ Route::get('/', function () {
 
 Auth::routes();
 
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
 Route::get('/projects', [App\Http\Controllers\ProjectController::class, 'index'])->name('projects');
+
+Route::get('/projects/{project_id}', [App\Http\Controllers\ProjectController::class, 'show'])->name('projects.show');
