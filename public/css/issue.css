@@ -1,0 +1,17 @@
+.project_list-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.issue_card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.issue_card h3 {
+    margin: .5rem;
+}
+.issue_card button {
+    margin: .5rem 2rem .5rem 2rem;
+}

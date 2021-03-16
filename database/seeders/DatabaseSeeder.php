@@ -18,19 +18,28 @@ class DatabaseSeeder extends Seeder
     {
         // Seeding 1st user with 2 project
         User::factory(1)
-                ->hasProjects(2)
-                ->create();
+            ->hasProjects(2)
+            ->create();
 
         // Seed issue statuses
         DB::table('issue_statuses')->insert([
-            'name' => 'Unassigned'
-        ]);
-        DB::table('issue_statuses')->insert([
             'name' => 'Backlog'
         ]);
+        DB::table('issue_statuses')->insert([
+            'name' => 'To Do'
+        ]);
+        DB::table('issue_statuses')->insert([
+            'name' => 'In Progress'
+        ]);
+        DB::table('issue_statuses')->insert([
+            'name' => 'Testing'
+        ]);
+        DB::table('issue_statuses')->insert([
+            'name' => 'Completed'
+        ]);
 
-        // Seeding 4 issues, project_id will be random
-        Issue::factory(4)
-                ->create();
+        // Seeding 8 issues, project_id will be random
+        Issue::factory(8)
+            ->create();
     }
 }

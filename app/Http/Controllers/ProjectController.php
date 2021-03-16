@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Issue;
+use App\Models\IssueStatus;
 use App\Models\Project;
-use Illuminate\Database\QueryException;
-use Illuminate\Http\Request;
-use PhpParser\Node\Stmt\TryCatch;
+use Database\Factories\StatusFactory;
 
 class ProjectController extends Controller
 {
@@ -17,12 +17,26 @@ class ProjectController extends Controller
 
     public function index()
     {
-
         $user = auth()->user();
 
         $projects = Project::where('user_id', $user->id)->get();
         return view('projects/projects', [
             'projects' => $projects
+        ]);
+    }
+
+    public function show($project_id)
+    {
+        $project = Project::find($project_id)->firstOrFail();
+
+        $issues = Issue::where('project_id', $project_id)->get();
+
+        $statuses = IssueStatus::all();
+
+        return view('projects/project', [
+            'project' => $project,
+            'statuses' => $statuses,
+            'issues' => $issues
         ]);
     }
 }
